@@ -11,7 +11,9 @@ import {
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
-const Intro = React.lazy(() => import("./Introduction/Intro"));
+const Intro = React.lazy(() => import("./Tutorial/Intro"));
+const Components = React.lazy(() => import("./Tutorial/Components"));
+const Events = React.lazy(() => import("./Tutorial/Events"));
 
 export default class Home extends Component {
   render() {
@@ -34,13 +36,16 @@ export default class Home extends Component {
                 defaultOpenKeys={["sub1"]}
                 style={{ height: "100%", borderRight: 0 }}
               >
-                <SubMenu key="sub1" title="Intro">
+                <SubMenu key="sub1" title="Tutorial">
                   <Menu.Item key="1">
                     <Link to="/intro">Intro</Link>
                   </Menu.Item>
-                  <Menu.Item key="2">option2</Menu.Item>
-                  <Menu.Item key="3">option3</Menu.Item>
-                  <Menu.Item key="4">option4</Menu.Item>
+                  <Menu.Item key="2">
+                    <Link to="/components">Components</Link>
+                  </Menu.Item>
+                  <Menu.Item key="3">
+                    <Link to="/events">Events</Link>
+                  </Menu.Item>
                 </SubMenu>
                 <SubMenu key="sub2" icon={<LaptopOutlined />} title="subnav 2">
                   <Menu.Item key="5">option5</Menu.Item>
@@ -77,6 +82,8 @@ export default class Home extends Component {
                 <React.Suspense fallback={<div>Loading...</div>}>
                   <Routes>
                     <Route path="/intro" element={<Intro />} />
+                    <Route path="/components" element={<Components />} />
+                    <Route path="/events" element={<Events />} />
                   </Routes>
                 </React.Suspense>
               </Content>

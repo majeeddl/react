@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-// import AceEditor from "react-ace";
-// import "ace-builds/src-noconflict/mode-javascript";
-// import "ace-builds/src-noconflict/theme-github";
 
 import { Typography } from "antd";
 import { Ace } from "../../components/Ace";
-import { spawn } from "child_process";
 
 const { Title } = Typography;
 
@@ -43,7 +39,8 @@ export default class Intro extends Component {
           ></Ace>
           Example Two
           <Ace
-            value={`${`const myelement = React.createElement('h1', {}, 'I do not use JSX!');\n\nReactDOM.render(myelement, document.getElementById('root'));`}`}
+            value={`${`const myelement = React.createElement('h1', {}, 'I do not use JSX!');\n\nReactDOM.render(myelement, document.getElementById('root'));
+            `}`}
           ></Ace>
         </div>
       </div>
