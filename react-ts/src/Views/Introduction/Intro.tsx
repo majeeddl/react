@@ -5,6 +5,7 @@ import React, { Component } from "react";
 
 import { Typography } from "antd";
 import { Ace } from "../../components/Ace";
+import { spawn } from "child_process";
 
 const { Title } = Typography;
 
@@ -36,7 +37,14 @@ export default class Intro extends Component {
           >
             test
           </AceEditor> */}
-          <Ace value="salam"></Ace>
+          Example One
+          <Ace
+            value={`${`const myelement = <h1>I Love JSX!</h1>\n\nReactDOM.render(myelement, document.getElementById('root'));`}`}
+          ></Ace>
+          Example Two
+          <Ace
+            value={`${`const myelement = React.createElement('h1', {}, 'I do not use JSX!');\n\nReactDOM.render(myelement, document.getElementById('root'));`}`}
+          ></Ace>
         </div>
       </div>
     );

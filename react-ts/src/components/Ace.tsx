@@ -5,11 +5,23 @@ import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-github";
 
 type AceEditorProps = {
-  value?: string;
+  value?: any;
   readonly?: false;
 };
 
-export class Ace extends Component<AceEditorProps> {
+type AceEditorState = {
+  value?: any;
+};
+
+export class Ace extends Component<AceEditorProps, AceEditorState> {
+  constructor(props: any) {
+    super(props);
+
+    this.state = {
+      value: props.value,
+    };
+  }
+
   render() {
     return (
       <div>
@@ -18,12 +30,10 @@ export class Ace extends Component<AceEditorProps> {
           theme="github"
           name="firstEditor"
           readOnly
-          height="200px"
+          height="100px"
           editorProps={{ $blockScrolling: true }}
-          defaultValue={this.props.value}
-        >
-         
-        </AceEditor>
+          defaultValue={this.state.value}
+        ></AceEditor>
       </div>
     );
   }
