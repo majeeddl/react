@@ -36,11 +36,14 @@ import { produce } from "immer";
 // }
 
 // let fn = sayHello()
-
 // let message = fn()
+
+
 
 // let numbers = [1,2,3]
 
+//Higher order function
+// map and setTimeout is and exmaple of higher order function
 // numbers.map(number => number * 2 )
 
 const person = {
