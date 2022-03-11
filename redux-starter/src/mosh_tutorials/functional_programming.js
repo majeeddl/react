@@ -44,6 +44,7 @@ const transformWithCurrying = pipe(trim,toLowerCase,wrap('span'))
 /* -------------------------------------------------------------------- */
 /* Pure Functions */
 /*
+    Javascript is not a pure function programming
 
     In Pure Function , we can not use :
         1. random values
@@ -57,5 +58,26 @@ const transformWithCurrying = pipe(trim,toLowerCase,wrap('span'))
         2. Easily testable
         3. Concurrency
         4. Cacheable
+
+*/
+
+
+/* -------------------------------------------------------------------- */
+/* Immutability */
+//It means that when we create an object, it can not be changed or mutated
+
+// When we use "const" keyword , you are not creating a mutated object
+// In fact, "const" prevent reassignment
+
+/*
+    PROS
+    Why are the benefits of "Immutability"?
+        1. Your application can be more "predictable"  => Predictability
+        2. Faster Change Detection
+        3. The third benefit of immutability is "Concurrency"
+
+    CONS
+        1. Performance
+        2. Memory overhead ( copying of object)
 
 */
