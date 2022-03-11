@@ -1,6 +1,6 @@
 import { compose , pip, pipe} from 'lodash/fp';
 
-
+/* -------------------------------------------------------------------- */
 /* Function Composition */
 
 let input = '    JavaScript ';
@@ -17,7 +17,7 @@ const toLowerCase = str => str.toLowerCase();
 // 2. The other problem is the number of parenthesis, as we work on complex program
 const result = wrapInDiv(toLowerCase(trim(input)));
 
-
+/* -------------------------------------------------------------------- */
 /* Composing and Piping */
 
 //User Lodash
@@ -30,7 +30,7 @@ transform(input);
 const transformWithPipe = pipe(trim,toLowerCase,wrapInDiv);
 transformWithPipe(input);
 
-
+/* -------------------------------------------------------------------- */
 /* currying */
 //This higher order function is very similar to "wrapInDev"
 const wrapInSpan = str => `<span>${str}</span>`;
@@ -40,3 +40,22 @@ const wrapInSpan = str => `<span>${str}</span>`;
 const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
 
 const transformWithCurrying = pipe(trim,toLowerCase,wrap('span'))
+
+/* -------------------------------------------------------------------- */
+/* Pure Functions */
+/*
+
+    In Pure Function , we can not use :
+        1. random values
+        2. current date/time 
+        3. read or change global state or variables ( DOM, files, db, etc )
+        4. mutation of parameters
+
+
+    What are the benefits of pure functions :
+        1. Self-documenting
+        2. Easily testable
+        3. Concurrency
+        4. Cacheable
+
+*/
