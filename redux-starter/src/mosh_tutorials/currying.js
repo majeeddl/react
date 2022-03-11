@@ -9,4 +9,5 @@ const add = (a) =>{
 
 //add(1)(2);
 
+// we can rewrite with arrow function
 const add2 = a => b => a+b // (a,b) => a+b

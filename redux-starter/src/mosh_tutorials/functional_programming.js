@@ -29,3 +29,14 @@ transform(input);
 // To solve of reading from right to left
 const transformWithPipe = pipe(trim,toLowerCase,wrapInDiv);
 transformWithPipe(input);
+
+
+/* currying */
+//This higher order function is very similar to "wrapInDev"
+const wrapInSpan = str => `<span>${str}</span>`;
+
+//const wrap = (type,str)=> `<${type}>${str}</${type}>`;
+// We want to use currying
+const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
+
+const transformWithCurrying = pipe(trim,toLowerCase,wrap('span'))
