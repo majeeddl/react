@@ -81,3 +81,37 @@ const transformWithCurrying = pipe(trim,toLowerCase,wrap('span'))
         2. Memory overhead ( copying of object)
 
 */
+
+const person = {
+    name : "John"
+}
+
+// This is copying of every property of object into new object
+const newCopyingObject = Object.assign({},person );
+
+const newCopyingObjectWithUpdatingProperty = Object.assign({},person, {
+    name : 'Majeed',
+    age : 30
+})
+
+// there is a better way : Spread Operator
+// it is more concise
+const useSpreadOperator = {...person, name : "majeed"};
+
+
+//the both of two methods is "SHALLOW COPY" and we should be more careful when we are using "Nested Object"
+const personTwo = {
+    name : "John",
+    address : {
+        country : "USA",
+        city : "New York"
+    }
+}
+// When we change the address property ofter copying that object , the base object changes too
+//To solve this problem , we can use deep copy
+const deepCopyPerson = {
+    ...personTwo,
+    address : {
+        ...personTwo.address,
+    }
+}
