@@ -1,4 +1,6 @@
 import { compose , pip, pipe} from 'lodash/fp';
+import  { Map } from "immutable";
+import { produce } from 'immer';
 
 /* -------------------------------------------------------------------- */
 /* Function Composition */
@@ -138,3 +140,38 @@ const removed = numbers.filter(n => n != 2);
 //Updating
 const updated = numbers.map(n=> n==2 ? 22 : n);
 // If we have an array of objects , we have to copy that object
+
+
+
+/* -------------------------------------------------------------------- */
+/* Immutable Libraries */
+
+/*
+    1. Immutable : It is developed by facebook and it's very popular library
+    2. Immer : it is very trending library and mosh has been loving it
+    3. Mori
+*/
+
+//immutable
+let book = Map({ title : 'book one' , ownerId : 1});
+
+console.log(book.get('title'));
+console.log(book.toJS());
+
+const publish = (_book)=>{
+    // it is not modified the original object
+    return _book.set('isPublished',true)
+}
+
+publish(book)
+
+
+//immer
+let bookTwo = { title : ' book two'}
+
+const publishTwo = (_book)=>{
+    //With follwing this pattern the book object is not gonna be modifed
+    produce(_book , draftBook => {
+        draftBook.isPublished = true
+    })
+}
