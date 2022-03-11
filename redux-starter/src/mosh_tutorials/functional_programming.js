@@ -115,3 +115,26 @@ const deepCopyPerson = {
         ...personTwo.address,
     }
 }
+
+
+/* -------------------------------------------------------------------- */
+/* Updating Arrays */
+
+const numbers = [1,2,3];
+
+//Adding 
+const addingToNumbers = [4,...numbers];
+//Adding to index
+const index = numbers.indexOf(2);
+const addingToSpecificIndex = [
+    ...numbers.slice(0,index),
+    4,
+    ...numbers(index)];
+
+
+//Removing
+const removed = numbers.filter(n => n != 2);
+
+//Updating
+const updated = numbers.map(n=> n==2 ? 22 : n);
+// If we have an array of objects , we have to copy that object
