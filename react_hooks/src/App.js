@@ -11,6 +11,7 @@ import UseEffect from "./views/UseEffect";
 import UseContext from "./views/UseContext";
 import UseRef from "./views/UseRef";
 import UseReducerView from "./views/UseReducer";
+import UseCallback from "./views/UseCallback";
 
 export const UserContext = createContext();
 
@@ -49,6 +50,11 @@ function App() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
+              <Nav.Link eventKey="link-1" to="/use_callback" as={Link}>
+                Use Callback
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
               <Nav.Link eventKey="link-1" to="/test" as={Link}>
                 Test
               </Nav.Link>
@@ -65,6 +71,7 @@ function App() {
               <Route path="/use_context" element={<UseContext />}></Route>
               <Route path="/use_ref" element={<UseRef />}></Route>
               <Route path="/use_reducer" element={<UseReducerView />}></Route>
+              <Route path="/use_callback" element={<UseCallback />}></Route>
             </Routes>
           </div>
         </div>
