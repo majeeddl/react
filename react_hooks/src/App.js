@@ -10,7 +10,7 @@ import Test from "./views/Test";
 import UseEffect from "./views/UseEffect";
 import UseContext from "./views/UseContext";
 import UseRef from "./views/UseRef";
-import UseReducer from "./views/UseReducer";
+import UseReducerView from "./views/UseReducer";
 
 export const UserContext = createContext();
 
@@ -64,7 +64,7 @@ function App() {
               <Route path="/use_effect" element={<UseEffect />}></Route>
               <Route path="/use_context" element={<UseContext />}></Route>
               <Route path="/use_ref" element={<UseRef />}></Route>
-              <Route path="/use_reducer" element={<UseReducer />}></Route>
+              <Route path="/use_reducer" element={<UseReducerView />}></Route>
             </Routes>
           </div>
         </div>
