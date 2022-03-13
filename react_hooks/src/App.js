@@ -12,6 +12,7 @@ import UseContext from "./views/UseContext";
 import UseRef from "./views/UseRef";
 import UseReducerView from "./views/UseReducer";
 import UseCallback from "./views/UseCallback";
+import UseMemo from "./views/UseMemo";
 
 export const UserContext = createContext();
 
@@ -55,6 +56,11 @@ function App() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as="li">
+              <Nav.Link eventKey="link-1" to="/use_memo" as={Link}>
+                Use Memo
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item as="li">
               <Nav.Link eventKey="link-1" to="/test" as={Link}>
                 Test
               </Nav.Link>
@@ -72,6 +78,7 @@ function App() {
               <Route path="/use_ref" element={<UseRef />}></Route>
               <Route path="/use_reducer" element={<UseReducerView />}></Route>
               <Route path="/use_callback" element={<UseCallback />}></Route>
+              <Route path="/use_memo" element={<UseMemo />}></Route>
             </Routes>
           </div>
         </div>
