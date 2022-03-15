@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Provider } from "react-redux";
 import {
   Route,
   Routes,
@@ -13,11 +13,13 @@ const Home = React.lazy(() => import("./Views/Home"));
 function App() {
   return (
     <div className="App">
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="*" element={<Home></Home>} />
-        </Routes>
-      </React.Suspense>
+      {/* <Provider store={store}> */}
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="*" element={<Home></Home>} />
+          </Routes>
+        </React.Suspense>
+      {/* </Provider> */}
     </div>
   );
 }
