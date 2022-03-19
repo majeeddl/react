@@ -1,23 +1,37 @@
-const initialState = {
-  allRecipes: [
-    {
-      id: 1,
-      name: "Recipe 1",
-    },
-    {
-      id: 2,
-      name: "Recipe 2",
-    },
-  ],
-  favoriteRecipes: [],
-  searchTerm: "",
-};
+// const initialState = {
+//   allRecipes: [
+//     {
+//       id: 1,
+//       name: "Recipe 1",
+//     },
+//     {
+//       id: 2,
+//       name: "Recipe 2",
+//     },
+//   ],
+//   favoriteRecipes: [],
+//   searchTerm: "",
+// };
 
-const initialAllRecipes = [];
+const initialAllRecipes = [
+  {
+    id: 1,
+    name: "Recipe 1",
+  },
+  {
+    id: 2,
+    name: "Recipe 2",
+  },
+];
 const allRecipesReducer = (allRecipes = initialAllRecipes, action) => {
   switch (action.type) {
     case "allRecipes/load":
       return action.payload;
+    case "allRecipes/add":
+      return [
+          ...allRecipes,
+          ...action.payload
+      ]
     default:
       return allRecipes;
   }
