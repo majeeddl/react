@@ -23,4 +23,5 @@ export const counterSlice = createSlice({
 
 export const { increment , decrement, incrementByAmount} = counterSlice;
 
+//export reducer
 export default counterSlice.reducer;
