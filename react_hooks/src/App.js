@@ -12,6 +12,8 @@ import UseRef from "./views/UseRef";
 import UseReducerView from "./views/UseReducer";
 import UseCallback from "./views/UseCallback";
 import UseMemo from "./views/UseMemo";
+import Apollo from "./views/Apollo";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -33,12 +35,13 @@ const errorLink = onError((graphqlErrors, networkError) => {
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: "http://localhost:6969/graphql" }),
+  new HttpLink({ uri: "http://localhost:4000/graphql" }),
 ]);
 
-const client = ApolloClient({
-  cache: InMemoryCache,
-  link: link,
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  uri: "http://localhost:4000/graphql",
+  // link: link,
 });
 
 function App() {
@@ -87,13 +90,18 @@ function App() {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item as="li">
+                <Nav.Link eventKey="link-1" to="/apollo" as={Link}>
+                  Apollo client
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li">
                 <Nav.Link eventKey="link-1" to="/test" as={Link}>
                   Test
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item as="li">
+              {/* <Nav.Item as="li">
                 <Nav.Link eventKey="link-2">Link</Nav.Link>
-              </Nav.Item>
+              </Nav.Item> */}
             </Nav>
             <div>
               <Routes>
@@ -105,6 +113,7 @@ function App() {
                 <Route path="/use_reducer" element={<UseReducerView />}></Route>
                 <Route path="/use_callback" element={<UseCallback />}></Route>
                 <Route path="/use_memo" element={<UseMemo />}></Route>
+                <Route path="/apollo" element={<Apollo />}></Route>
               </Routes>
             </div>
           </div>

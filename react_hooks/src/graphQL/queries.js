@@ -1,8 +1,10 @@
 
-import {qgl} from '@apollo/client'
+import {gql} from '@apollo/client'
 
-export const LoadUsers = qgl`
-query{
-    
-}
+export const getBooksQuery = gql`
+    query{
+        books{
+            title
+        }
+    }
 `
