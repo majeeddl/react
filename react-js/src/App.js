@@ -12,9 +12,16 @@ const App = () => {
         {allRecipes.map((item) => (
           <div key={item.id}>{item.name}</div>
         ))}
+
+        
       </div>
     </div>
   );
 };
 
+
+
+
 export default App;
+
+
