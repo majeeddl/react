@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require("apollo-server");
-
+const { books } = require("./data/data.js");
 const typeDefs = gql`
   # This "Book" type defines the queryable fields for every book in our data source.
   type Book {
@@ -22,19 +22,6 @@ const typeDefs = gql`
     createBook(book: CreateBookInput!): Book!
   }
 `;
-
-const books = [
-  {
-    id: 1,
-    title: "Book1",
-    author: "Author 1",
-  },
-  {
-    id: 2,
-    title: "Book2",
-    author: "Author 2",
-  },
-];
 
 const resolvers = {
   Query: {

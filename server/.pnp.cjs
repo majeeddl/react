@@ -34,6 +34,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["apollo-server", "virtual:48fd9d653646a991d0eda5ffe92778b72de446c151643ca5c3964e62f24bed64d28e19b09ae1edf82cd4ab484e9e16d2c4b4953045a3524fb9431546d36f4563#npm:3.6.7"],\
+            ["cors", "npm:2.8.5"],\
+            ["express", "npm:4.17.3"],\
+            ["express-graphql", "virtual:48fd9d653646a991d0eda5ffe92778b72de446c151643ca5c3964e62f24bed64d28e19b09ae1edf82cd4ab484e9e16d2c4b4953045a3524fb9431546d36f4563#npm:0.12.0"],\
             ["graphql", "npm:16.3.0"],\
             ["nodemon", "npm:2.0.15"]\
           ],\
@@ -1506,6 +1509,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["express-graphql", [\
+        ["npm:0.12.0", {\
+          "packageLocation": "./.yarn/cache/express-graphql-npm-0.12.0-0ae188e52e-c1417718ed.zip/node_modules/express-graphql/",\
+          "packageDependencies": [\
+            ["express-graphql", "npm:0.12.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:48fd9d653646a991d0eda5ffe92778b72de446c151643ca5c3964e62f24bed64d28e19b09ae1edf82cd4ab484e9e16d2c4b4953045a3524fb9431546d36f4563#npm:0.12.0", {\
+          "packageLocation": "./.yarn/__virtual__/express-graphql-virtual-6c4b0c48e4/0/cache/express-graphql-npm-0.12.0-0ae188e52e-c1417718ed.zip/node_modules/express-graphql/",\
+          "packageDependencies": [\
+            ["express-graphql", "virtual:48fd9d653646a991d0eda5ffe92778b72de446c151643ca5c3964e62f24bed64d28e19b09ae1edf82cd4ab484e9e16d2c4b4953045a3524fb9431546d36f4563#npm:0.12.0"],\
+            ["@types/graphql", null],\
+            ["accepts", "npm:1.3.8"],\
+            ["content-type", "npm:1.0.4"],\
+            ["graphql", "npm:16.3.0"],\
+            ["http-errors", "npm:1.8.0"],\
+            ["raw-body", "npm:2.5.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/graphql",\
+            "graphql"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["fast-json-stable-stringify", [\
         ["npm:2.1.0", {\
           "packageLocation": "./.yarn/cache/fast-json-stable-stringify-npm-2.1.0-02e8905fda-b191531e36.zip/node_modules/fast-json-stable-stringify/",\
@@ -1805,6 +1834,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["http-errors", [\
+        ["npm:1.8.0", {\
+          "packageLocation": "./.yarn/cache/http-errors-npm-1.8.0-4399ea3b8d-873d997bad.zip/node_modules/http-errors/",\
+          "packageDependencies": [\
+            ["http-errors", "npm:1.8.0"],\
+            ["depd", "npm:1.1.2"],\
+            ["inherits", "npm:2.0.4"],\
+            ["setprototypeof", "npm:1.2.0"],\
+            ["statuses", "npm:1.5.0"],\
+            ["toidentifier", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:1.8.1", {\
           "packageLocation": "./.yarn/cache/http-errors-npm-1.8.1-fb60d9f6ae-d3c7e7e776.zip/node_modules/http-errors/",\
           "packageDependencies": [\
@@ -2974,6 +3015,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["server", "workspace:."],\
             ["apollo-server", "virtual:48fd9d653646a991d0eda5ffe92778b72de446c151643ca5c3964e62f24bed64d28e19b09ae1edf82cd4ab484e9e16d2c4b4953045a3524fb9431546d36f4563#npm:3.6.7"],\
+            ["cors", "npm:2.8.5"],\
+            ["express", "npm:4.17.3"],\
+            ["express-graphql", "virtual:48fd9d653646a991d0eda5ffe92778b72de446c151643ca5c3964e62f24bed64d28e19b09ae1edf82cd4ab484e9e16d2c4b4953045a3524fb9431546d36f4563#npm:0.12.0"],\
             ["graphql", "npm:16.3.0"],\
             ["nodemon", "npm:2.0.15"]\
           ],\
@@ -3182,6 +3226,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["toidentifier", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/toidentifier-npm-1.0.0-5dad252f90-199e6bfca1.zip/node_modules/toidentifier/",\
+          "packageDependencies": [\
+            ["toidentifier", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:1.0.1", {\
           "packageLocation": "./.yarn/cache/toidentifier-npm-1.0.1-f759712599-952c29e2a8.zip/node_modules/toidentifier/",\
           "packageDependencies": [\
