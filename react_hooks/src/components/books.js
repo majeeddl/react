@@ -20,8 +20,7 @@ const getBooks = () => {
   const createBookHander = () => {
     createBook({
       variables: {
-        title: "The book 3",
-        author: "majeed",
+        book: { title: "The book 3", author: "majeed" },
       },
     });
 

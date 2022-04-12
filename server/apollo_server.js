@@ -39,7 +39,7 @@ const books = [
 const resolvers = {
   Query: {
     books: () => books,
-    book: (_,args) => books.filter((book) => book.id == args.id),
+    book: (_, args) => books.find((book) => book.id == parseInt(args.id)),
   },
   Mutation: {
     createBook: (parent, args) => {
