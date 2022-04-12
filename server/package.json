@@ -1,11 +1,23 @@
 {
   "name": "server",
   "packageManager": "yarn@3.2.0",
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "*.test.ts",
+      "db/*",
+      ".yarn/*"
+    ],
+    "delay": "2"
+  },
   "scripts": {
-    "start" : "node index.js"
+    "start": "nodemon --ext js apollo_server.js "
   },
   "dependencies": {
     "apollo-server": "^3.6.7",
     "graphql": "^16.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

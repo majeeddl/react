@@ -1,10 +1,10 @@
-
-import {gql} from '@apollo/client'
+import { gql } from "@apollo/client";
 
 export const getBooksQuery = gql`
-    query{
-        books{
-            title
-        }
+  query getBooks {
+    books {
+      title
+      author
     }
-`
+  }
+`;
