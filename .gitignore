@@ -4,3 +4,4 @@ react_hooks/src/views/Home.js
 react-nextjs/yarn.lock
 react_hooks/yarn.lock
 **/.yarn/**
+expo-app/package-lock.json
