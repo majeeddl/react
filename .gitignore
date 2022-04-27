@@ -5,3 +5,7 @@ react-nextjs/yarn.lock
 react_hooks/yarn.lock
 **/.yarn/**
 expo-app/package-lock.json
+react-nextjs/package-lock.json
+react_hooks/package-lock.json
+react-ts/package-lock.json
+redux-starter/package-lock.json
