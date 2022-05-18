@@ -19,6 +19,13 @@ function UseRef(props) {
         inputElement.current.focus()
     }
 
+    const [inputValue2, setInputValue2] = useState("")
+    const previousInputValue = useRef("");
+
+    useEffect(() => {
+        previousInputValue.current = inputValue2;
+    }, [inputValue2])
+
     return (
         <>
             <div>
@@ -113,6 +120,55 @@ function UseRef(props) {
                 <div className="mt-2">
                     <input type="text" ref={inputElement} />
                     <Button onClick={focusInput}>Focus Input</Button>
+                </div>
+            </div>
+
+            <div className="mt-10">
+                <h2>Tracking State Changes</h2>
+                <div>
+                    The useRef Hook can also be used to keep track of previous state values.
+
+                    This is because we are able to persist useRef values between renders.
+                </div>
+                <div className="mt-2">
+                    <AceEditor
+                        mode="javascript"
+                        theme="monokai"
+                        name="UNIQUE_ID_OF_DIV"
+                        height="330px"
+                        value={`function App() {
+  const [inputValue, setInputValue] = useState("");
+  const previousInputValue = useRef("");
+
+  useEffect(() => {
+    previousInputValue.current = inputValue;
+  }, [inputValue]);
+
+  return (
+    <>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <h2>Current Value: {inputValue}</h2>
+      <h2>Previous Value: {previousInputValue.current}</h2>
+    </>
+  );
+}`}
+                        editorProps={{ $blockScrolling: true }}
+                    />
+                </div>
+
+                <div className="mt-2">
+                    input:
+                    <input
+                        type="text"
+                        value={inputValue2}
+                        onChange={(e) => setInputValue2(e.target.value)}
+                    />
+                    <h2>Current Value: {inputValue2}</h2>
+                    <h2>Previous Value: {previousInputValue.current}</h2>
                 </div>
             </div>
         </>

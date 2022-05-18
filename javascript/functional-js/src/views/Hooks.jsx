@@ -1,14 +1,18 @@
-import React , {useState} from 'react'
+import React, { createContext,useState } from 'react'
 import PropTypes from 'prop-types'
-import { Tabs ,Tab } from "react-bootstrap"
+import { Tabs, Tab } from "react-bootstrap"
 
 import UseState from "./hooks/UseState"
 import UseEffect from "./hooks/UseEffect"
 import UseRef from "./hooks/UseRef"
+import UseContext from './hooks/UseContext'
+import UserReducer from './hooks/UserReducer'
+
+export const UserContext = createContext()
 
 const Hooks = (props) => {
 
-    
+    const [user, setUser] = useState("Majeed")
 
     return (
         <div>
@@ -25,6 +29,24 @@ const Hooks = (props) => {
                 </Tab>
                 <Tab eventKey="useRef" title="useRef">
                     <UseRef></UseRef>
+                </Tab>
+                <Tab eventKey="useContext" title="useContext">
+                    <UserContext.Provider value={user}>
+                        <UseContext></UseContext>
+                    </UserContext.Provider>
+
+                </Tab>
+                <Tab eventKey="useReducer" title="useReducer">
+                    <UserReducer></UserReducer>
+                </Tab>
+                <Tab eventKey="useMemo" title="useMemo">
+
+                </Tab>
+                <Tab eventKey="useCallback" title="useCallback">
+
+                </Tab>
+                <Tab eventKey="customHooks" title="customHooks">
+
                 </Tab>
             </Tabs>
 
