@@ -7,6 +7,9 @@ import UseEffect from "./hooks/UseEffect"
 import UseRef from "./hooks/UseRef"
 import UseContext from './hooks/UseContext'
 import UserReducer from './hooks/UserReducer'
+import UseMemo from './hooks/UseMemo'
+import UseCallback from './hooks/UseCallback'
+import CustomHooks from './hooks/CustomHooks'
 
 export const UserContext = createContext()
 
@@ -40,13 +43,13 @@ const Hooks = (props) => {
                     <UserReducer></UserReducer>
                 </Tab>
                 <Tab eventKey="useMemo" title="useMemo">
-
+                    <UseMemo></UseMemo>
                 </Tab>
                 <Tab eventKey="useCallback" title="useCallback">
-
+                    <UseCallback></UseCallback>
                 </Tab>
                 <Tab eventKey="customHooks" title="customHooks">
-
+                    <CustomHooks></CustomHooks>
                 </Tab>
             </Tabs>
 
