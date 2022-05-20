@@ -10,6 +10,7 @@ import './App.css'
 
 import Home from './views/Home'
 import Hooks from './views/Hooks'
+import Redux from './views/Redux';
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
         <Routes>
           <Route exac path="/" element={<Home></Home>}></Route>
           <Route path="hooks" element={<Hooks></Hooks>}> </Route>
+          <Route path="redux" element={<Redux></Redux>}> </Route>
         </Routes>
       </Container>
     </div>
