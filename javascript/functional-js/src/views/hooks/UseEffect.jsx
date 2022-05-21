@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import AceEditor from "react-ace";
 import PropTypes from 'prop-types'
 
@@ -42,6 +42,18 @@ useEffect(() => {
 
     }, [count]);
 
+    const [show, setShow] = useState(false);
+
+    const popup = useRef();
+    const button = useRef();
+
+
+    useLayoutEffect(() => {
+        if (popup.current == null || button.current == null) return
+        const { bottom } = button.current.getBoundingClientRect();
+        popup.current.style.top = `${bottom + 25}px`;
+    }, [show])
+
     return (
         <>
             <div>
@@ -74,6 +86,33 @@ useEffect(() => {
                 </div>
             </div>
 
+            <h2 className='mt-5'>useLayoutEffect</h2>
+            <div className='mt-2'>
+                The useLayoutEffect is not asynchronous.
+                <br />
+                when we use 'uselayoutEffect', meanwhile react calculate our DOM and when ot actually paints
+                it out to the screen, so react is going to calculate the positions of everything in the DOM
+                it is going to pass that to the browser and then in between that and when the browser paints the information
+                to the screen all of our useLayoutEffects are going to run.
+                <br />
+                Which means useLayoutEffects are perfect when you need to actually do something based on the layout of your
+                your dom. That's where the name useLayoutEffect comes from.
+                <br />
+                UseLayoutEffect is not quit as performance since it happens synchronously instead of asynchronously
+                which is why we should always try to use 'useEffect' first
+            </div>
+            <div className="mt-2">
+                <button ref={button} onClick={() => setShow(prev => !prev)}>
+                    Click Hear
+                </button>
+                {
+                    show && (
+                        <div style={{ position: "absolute" }} ref={popup}>
+                            This is a popup
+                        </div>
+                    )
+                }
+            </div>
         </>
     )
 }
