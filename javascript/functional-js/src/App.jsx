@@ -11,6 +11,7 @@ import './App.css'
 import Home from './views/Home'
 import Hooks from './views/Hooks'
 import Redux from './views/Redux';
+import Graphql from './views/Graphql';
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
               <Nav.Link to="/" as={Link}>Home</Nav.Link>
               <Nav.Link to="/hooks" as={Link}>Hooks</Nav.Link>
               <Nav.Link to="/redux" as={Link}>Redux</Nav.Link>
+              <Nav.Link to="/graphql" as={Link}>Graphql</Nav.Link>
               <Nav.Link to="/storybook" as={Link}>Story Book</Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -35,6 +37,7 @@ const App = () => {
           <Route exac path="/" element={<Home></Home>}></Route>
           <Route path="hooks" element={<Hooks></Hooks>}> </Route>
           <Route path="redux" element={<Redux></Redux>}> </Route>
+          <Route path="grphql" element={<Graphql></Graphql>}></Route>
         </Routes>
       </Container>
     </div>
