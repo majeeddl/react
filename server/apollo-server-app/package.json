@@ -1,14 +1,14 @@
 {
   "name": "apollo-server-app",
   "version": "1.0.0",
-  "description": "This project has been written for learning and testing react",
+  "description": "This project has been written for serving graph ql server",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --ext js server.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/majeeddl/react.git"
+    "type": "git"
   },
   "author": "Majeed Dourandeesh",
   "license": "ISC",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/majeeddl/react#readme",
   "dependencies": {
     "apollo-server": "^3.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
