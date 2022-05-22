@@ -7,7 +7,7 @@ const {
   GraphQLList,
 } = require("graphql");
 
-const { books } = require("../data/data");
+const { books } = require("../../data/data");
 
 const BookType = new GraphQLObjectType({
   name: "Book",

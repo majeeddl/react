@@ -1,0 +1,22 @@
+{
+  "name": "apollo-server-app",
+  "version": "1.0.0",
+  "description": "This project has been written for learning and testing react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majeeddl/react.git"
+  },
+  "author": "Majeed Dourandeesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majeeddl/react/issues"
+  },
+  "homepage": "https://github.com/majeeddl/react#readme",
+  "dependencies": {
+    "apollo-server": "^3.7.0"
+  }
+}

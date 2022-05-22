@@ -15,13 +15,13 @@
     "express": "nodemon --ext js express_apollo_server.js "
   },
   "dependencies": {
-    "apollo-server": "^3.6.7",
+    "apollo-server": "^3.7.0",
     "cors": "^2.8.5",
-    "express": "^4.17.3",
+    "express": "^4.18.1",
     "express-graphql": "^0.12.0",
-    "graphql": "^16.3.0"
+    "graphql": "^16.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }
