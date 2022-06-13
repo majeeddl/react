@@ -5,7 +5,7 @@ import React from 'react'
 
 const Button = (props) => {
     return (
-        <div >Button</div>
+        <button data-testid='button1' >Button</button>
     )
 }
 
