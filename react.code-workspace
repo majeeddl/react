@@ -1,6 +1,27 @@
 {
   "folders": [
     {
+      "path": "./base-project-js"
+    },
+    {
+      "path": "./base-project-ts"
+    },
+    {
+      "path": "./redux-project-js"
+    },
+    {
+      "path": "./redux-project-ts"
+    },
+    {
+      "path": "./cypress-project-js"
+    },
+    {
+      "path": "./storybook-project-js"
+    },
+    {
+      "path": "./server"
+    },
+    {
       "path": "."
     }
   ],
