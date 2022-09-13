@@ -13,6 +13,9 @@
       "path": "./redux-project-ts"
     },
     {
+      "path": "react-query-tutorials"
+    },
+    {
       "path": "./cypress-project-js"
     },
     {
@@ -25,6 +28,5 @@
       "path": "."
     }
   ],
-  "settings": {
-  }
+  "settings": {}
 }
