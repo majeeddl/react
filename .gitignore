@@ -13,3 +13,6 @@ javascript/functional-js/package-lock.json
 js/redux-project/package-lock.json
 react-query-tutorials/package-lock.json
 base-project-ts/package-lock.json
+base-project-js/yarn.lock
+base-project-js/package-lock.json
+.gitignore

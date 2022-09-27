@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Routes, Link, Route } from "react-router-dom"
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap"
-import Formis from "formis-react"
 
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
@@ -13,12 +12,13 @@ import Home from './views/Home'
 import Hooks from './views/Hooks'
 import Redux from './views/Redux';
 import Graphql from './views/Graphql';
+import Draggable from './views/Draggable';
 
 const App = () => {
 
   return (
     <div className="App">
-      
+
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="#home">React-Functional-JS-Vite</Navbar.Brand>
@@ -30,6 +30,7 @@ const App = () => {
               <Nav.Link to="/redux" as={Link}>Redux</Nav.Link>
               <Nav.Link to="/graphql" as={Link}>Graphql</Nav.Link>
               <Nav.Link to="/storybook" as={Link}>Story Book</Nav.Link>
+              <Nav.Link to="/draggable" as={Link}>Draggable</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="hooks" element={<Hooks></Hooks>}> </Route>
           <Route path="redux" element={<Redux></Redux>}> </Route>
           <Route path="grphql" element={<Graphql></Graphql>}></Route>
+          <Route path="draggable" element={<Draggable></Draggable>}></Route>
         </Routes>
       </Container>
     </div>
