@@ -17,7 +17,7 @@ import Draggable from './views/Draggable';
 const App = () => {
 
   return (
-    <div className="App">
+    <div className="App text-sm">
 
       <Navbar bg="light" expand="lg">
         <Container>
