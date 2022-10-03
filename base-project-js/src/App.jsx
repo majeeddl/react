@@ -13,6 +13,8 @@ import Hooks from './views/Hooks'
 import Redux from './views/Redux';
 import Graphql from './views/Graphql';
 import Draggable from './views/Draggable';
+import ReactQuery from './views/ReactQuery';
+import ReactForm from './views/ReactForm';
 
 const App = () => {
 
@@ -28,6 +30,8 @@ const App = () => {
               <Nav.Link to="/" as={Link}>Home</Nav.Link>
               <Nav.Link to="/hooks" as={Link}>Hooks</Nav.Link>
               <Nav.Link to="/redux" as={Link}>Redux</Nav.Link>
+              <Nav.Link to="/react-query" as={Link}>React Query</Nav.Link>
+              <Nav.Link to="/react-form" as={Link}>React Form</Nav.Link>
               <Nav.Link to="/graphql" as={Link}>Graphql</Nav.Link>
               <Nav.Link to="/storybook" as={Link}>Story Book</Nav.Link>
               <Nav.Link to="/draggable" as={Link}>Draggable</Nav.Link>
@@ -40,6 +44,8 @@ const App = () => {
           <Route exac path="/" element={<Home></Home>}></Route>
           <Route path="hooks" element={<Hooks></Hooks>}> </Route>
           <Route path="redux" element={<Redux></Redux>}> </Route>
+          <Route path="react-query" element={<ReactQuery></ReactQuery>}> </Route>
+          <Route path="react-form" element={<ReactForm></ReactForm>}> </Route>
           <Route path="grphql" element={<Graphql></Graphql>}></Route>
           <Route path="draggable" element={<Draggable></Draggable>}></Route>
         </Routes>
