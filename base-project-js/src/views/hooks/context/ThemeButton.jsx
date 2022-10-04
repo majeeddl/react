@@ -1,15 +1,18 @@
 import React, { useContext } from 'react'
-import { ThemeContext } from './theme.context'
+import { ThemeContext } from './theme.provider'
+
 
 const ThemeButton = () => {
 
-    const { theme } = useContext(ThemeContext)
+    const { theme, setTheme } = useContext(ThemeContext)
 
-    const setButtonTheme = ()=> {}
+    const setButtonTheme = () => {
+        setTheme("dark")
+    }
     return (
         <div>
-
-            <button style={{ backgroundColor: theme.background, color: theme.forground }} onClick={setButtonTheme}> Theme Button </button></div>
+            <button style={{ backgroundColor: theme.bgColor, color: theme.fontColor }} onClick={setButtonTheme}> Theme Button </button>
+        </div>
     )
 }
 

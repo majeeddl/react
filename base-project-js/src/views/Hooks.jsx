@@ -1,22 +1,20 @@
 import React, { createContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Tabs, Tab } from "react-bootstrap"
-
 import UseState from "./hooks/UseState"
 import UseEffect from "./hooks/UseEffect"
 import UseRef from "./hooks/UseRef"
-import UseContext from './hooks/context/UseContext'
+import UseContext from './hooks/UseContext'
 import UserReducer from './hooks/UserReducer'
 import UseMemo from './hooks/UseMemo'
 import UseCallback from './hooks/UseCallback'
 import CustomHooks from './hooks/CustomHooks'
-import { theme, ThemeContext } from './hooks/context/theme.context'
+import ThemeButton from './hooks/context/ThemeButton'
+import ThemeProvider from './hooks/context/theme.provider'
 
 export const UserContext = createContext({
     username: "majeed"
 })
-
-
 
 
 const Hooks = (props) => {
@@ -40,11 +38,14 @@ const Hooks = (props) => {
                     <UseRef></UseRef>
                 </Tab>
                 <Tab eventKey="useContext" title="useContext">
-                    <ThemeContext.Provider value={{ theme: theme.dark }}>
-                        <UserContext.Provider value={user}>
-                            <UseContext></UseContext>
-                        </UserContext.Provider>
-                    </ThemeContext.Provider>
+                    {/* <ThemeContext.Provider value={{ theme: theme.dark }}> */}
+                    <UserContext.Provider value={user}>
+                        <UseContext></UseContext>
+                    </UserContext.Provider>
+                    {/* </ThemeContext.Provider> */}
+                    <ThemeProvider>
+                        <ThemeButton></ThemeButton>
+                    </ThemeProvider>
 
 
 

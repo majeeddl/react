@@ -1,9 +1,9 @@
 
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { UserContext } from "../../Hooks";
-import ThemeButton from './ThemeButton';
-import { theme, ThemeContext } from './theme.context';
+import { UserContext } from "../Hooks";
+import ThemeButton from './context/ThemeButton';
+import { theme, ThemeContext } from './context/theme.context';
 
 function UseContext(props) {
 
@@ -24,7 +24,7 @@ function UseContext(props) {
 
             <div> Dynamic Context</div>
             <div>
-                <ThemeButton></ThemeButton>
+                {/* <ThemeButton></ThemeButton> */}
             </div>
         </>
     )
