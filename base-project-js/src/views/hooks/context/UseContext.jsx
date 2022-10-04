@@ -1,7 +1,9 @@
 
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { UserContext } from "../Hooks";
+import { UserContext } from "../../Hooks";
+import ThemeButton from './ThemeButton';
+import { theme, ThemeContext } from './theme.context';
 
 function UseContext(props) {
 
@@ -18,6 +20,11 @@ function UseContext(props) {
 
             <div className="mt-2">
                 Username is : {user}
+            </div>
+
+            <div> Dynamic Context</div>
+            <div>
+                <ThemeButton></ThemeButton>
             </div>
         </>
     )
