@@ -28,5 +28,9 @@
       "path": "."
     }
   ],
-  "settings": {}
+  "settings": {
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    }
+  }
 }
