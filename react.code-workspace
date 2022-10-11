@@ -10,10 +10,10 @@
       "path": "./redux-project-js"
     },
     {
-      "path": "./redux-project-ts"
+      "path": "react-query-tutorials"
     },
     {
-      "path": "react-query-tutorials"
+      "path": "react-table-examples"
     },
     {
       "path": "./cypress-project-js"
@@ -26,9 +26,6 @@
     },
     {
       "path": "."
-    },
-    {
-      "path": "react-table-examples"
     }
   ],
   "settings": {
