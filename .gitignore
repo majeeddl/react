@@ -17,3 +17,4 @@ base-project-js/yarn.lock
 base-project-js/package-lock.json
 .gitignore
 react-query-tutorials/yarn.lock
+react-table-examples/yarn.lock

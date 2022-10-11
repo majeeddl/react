@@ -26,6 +26,9 @@
     },
     {
       "path": "."
+    },
+    {
+      "path": "react-table-examples"
     }
   ],
   "settings": {
