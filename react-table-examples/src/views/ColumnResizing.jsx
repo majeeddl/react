@@ -9,7 +9,7 @@ import {
 
 import { defaultColumns, defaultData } from '../utils/data'
 
-import './ColumnResizing.scss'
+import '../assets/css/ColumnResizing.scss'
 
 
 

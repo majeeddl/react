@@ -7,6 +7,7 @@ import Home from './views/Home'
 import Basic from './views/Basic'
 import ColumnResizing from './views/ColumnResizing'
 import ColumnVisibility from './views/ColumnVisibility'
+import PaginationView from './views/Pagination'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,7 @@ function App() {
           <Route path="/basic" element={<Basic></Basic>} ></Route>
           <Route path="/column-resizing" element={<ColumnResizing></ColumnResizing>} ></Route>
           <Route path="/column-visibility" element={<ColumnVisibility></ColumnVisibility>} ></Route>
+          <Route path="/pagination" element={<PaginationView></PaginationView>} ></Route>
 
         </Routes>
       </Container>
