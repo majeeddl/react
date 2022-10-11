@@ -40,7 +40,7 @@ const ColumnResizing = () => {
       <div className="p-2">
 
         <div className="text-xl">{'<table/>'}</div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" style={{ maxWidth: '100%', overflow: 'auto' }}>
           <table
             className='table table-bordered'
             {...{
