@@ -8,6 +8,7 @@ import Basic from './views/Basic'
 import ColumnResizing from './views/ColumnResizing'
 import ColumnVisibility from './views/ColumnVisibility'
 import PaginationView from './views/Pagination'
+import SortingView from './views/Sorting'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
               <Nav.Link to="/column-visibility" as={Link}>Column Visibility</Nav.Link>
               <Nav.Link to="/column-sorting" as={Link}>Column Sorting</Nav.Link>
               <Nav.Link to="/pagination" as={Link}>Pagination</Nav.Link>
+              <Nav.Link to="/sorting" as={Link}>Sorting</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -35,6 +37,7 @@ function App() {
           <Route path="/column-resizing" element={<ColumnResizing></ColumnResizing>} ></Route>
           <Route path="/column-visibility" element={<ColumnVisibility></ColumnVisibility>} ></Route>
           <Route path="/pagination" element={<PaginationView></PaginationView>} ></Route>
+          <Route path="/sorting" element={<SortingView />} ></Route>
 
         </Routes>
       </Container>
