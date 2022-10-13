@@ -9,6 +9,7 @@ import ColumnResizing from './views/ColumnResizing'
 import ColumnVisibility from './views/ColumnVisibility'
 import PaginationView from './views/Pagination'
 import SortingView from './views/Sorting'
+import FilteringView from './views/Filtering'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +27,7 @@ function App() {
               <Nav.Link to="/column-sorting" as={Link}>Column Sorting</Nav.Link>
               <Nav.Link to="/pagination" as={Link}>Pagination</Nav.Link>
               <Nav.Link to="/sorting" as={Link}>Sorting</Nav.Link>
+              <Nav.Link to="/filtering" as={Link}>Filtering</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -38,6 +40,7 @@ function App() {
           <Route path="/column-visibility" element={<ColumnVisibility></ColumnVisibility>} ></Route>
           <Route path="/pagination" element={<PaginationView></PaginationView>} ></Route>
           <Route path="/sorting" element={<SortingView />} ></Route>
+          <Route path="/filtering" element={<FilteringView />} ></Route>
 
         </Routes>
       </Container>
