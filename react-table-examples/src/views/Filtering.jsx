@@ -70,6 +70,7 @@ const FilteringView = () => {
                         cell: info => info.getValue(),
                         footer: props => props.column.id,
                         search: false,
+                        filter : false
                     },
                     {
                         accessorFn: row => row.lastName,
@@ -190,8 +191,9 @@ const FilteringView = () => {
                                                 >
                                                     {flexRender(
                                                         header.column.columnDef.header,
-                                                        header.getContext()
+                                                        header.getContext() 
                                                     )}
+                                                    
                                                     {{
                                                         asc: ' 🔼',
                                                         desc: ' 🔽',
