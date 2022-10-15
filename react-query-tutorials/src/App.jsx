@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Route, Link, Routes } from "react-router-dom"
-import { QueryClientProvider, QueryClient} from "react-query"
+import { QueryClientProvider, QueryClient } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
 import { Navbar, Nav, Container } from "react-bootstrap"
 
 import './App.css'
@@ -36,6 +37,7 @@ function App() {
           </Routes>
         </Container>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
     </QueryClientProvider>
   )
 }
