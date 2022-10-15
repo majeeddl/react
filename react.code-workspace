@@ -14,6 +14,8 @@
     },
     {
       "path": "react-table-examples"
+    },{
+      "path" : "react-form-tutorials"
     },
     {
       "path": "./cypress-project-js"
