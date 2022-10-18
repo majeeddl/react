@@ -10,12 +10,16 @@
       "path": "./redux-project-js"
     },
     {
+      "path": "kendo-react"
+    },
+    {
       "path": "react-query-tutorials"
     },
     {
       "path": "react-table-examples"
-    },{
-      "path" : "react-form-tutorials"
+    },
+    {
+      "path": "react-form-tutorials"
     },
     {
       "path": "./cypress-project-js"
