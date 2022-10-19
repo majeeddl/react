@@ -9,9 +9,7 @@
     {
       "path": "./redux-project-js"
     },
-    {
-      "path": "kendo-react"
-    },
+   
     {
       "path": "react-query-tutorials"
     },
@@ -20,6 +18,12 @@
     },
     {
       "path": "react-form-tutorials"
+    },
+     {
+      "path": "kendo-react"
+    },
+    {
+      "path": "syncfusion-react"
     },
     {
       "path": "./cypress-project-js"
