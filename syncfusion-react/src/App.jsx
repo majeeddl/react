@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import { Container, Navbar, Nav} from 'react-bootstrap'
-import { Routes , Route, Link} from 'react-router-dom'
-import './App.css'
-import Basic from './views/Basic'
-import Home from './views/Home'
+import { useState } from "react";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import Basic from "./views/Basic";
+import Dashboard from "./views/Dashboard";
+import Home from "./views/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -37,11 +38,11 @@ function App() {
         <Routes>
           <Route path="/" exac element={<Home></Home>}></Route>
           <Route path="/basic" element={<Basic></Basic>}></Route>
-        
+          <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         </Routes>
       </Container>
     </div>
   );
 }
 
-export default App
+export default App;
