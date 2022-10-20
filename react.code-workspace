@@ -20,11 +20,15 @@
       "path": "react-form-tutorials"
     },
      {
+      "path": "mantine-react"
+    },
+     {
       "path": "kendo-react"
     },
     {
       "path": "syncfusion-react"
     },
+    
     {
       "path": "./cypress-project-js"
     },
