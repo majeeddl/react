@@ -1,17 +1,16 @@
 import { useState } from "react";
-import {Route,Routes} from "react-router-dom"
-import { Container } from "@mantine/core"
+import { Route, Routes } from "react-router-dom";
+import { Container } from "@mantine/core";
 import "./App.css";
 import HeaderAction, { HeaderActionProps } from "./components/HeaderAction";
 import Home from "./views/Home";
 
 function App() {
-
   const _links: any = {
     links: [
       {
         link: "/",
-        label: "Basic",
+        label: "Home",
       },
       {
         link: "#1",
