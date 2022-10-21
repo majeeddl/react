@@ -4,6 +4,7 @@ import { Container } from "@mantine/core";
 import "./App.css";
 import HeaderAction, { HeaderActionProps } from "./components/HeaderAction";
 import Home from "./views/Home";
+import Hooks from "./views/Hooks";
 
 function App() {
   const _links: any = {
@@ -11,6 +12,10 @@ function App() {
       {
         link: "/",
         label: "Home",
+      },
+      {
+        link: "/hooks",
+        label: "Hooks",
       },
       {
         link: "#1",
@@ -69,6 +74,7 @@ function App() {
       <Container className="p-10">
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/hooks" element={<Hooks></Hooks>}></Route>
         </Routes>
       </Container>
     </div>
