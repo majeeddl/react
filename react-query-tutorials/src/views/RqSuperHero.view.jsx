@@ -8,6 +8,14 @@ const fetchSuperHeroes = () => {
 
 const RqSuperHeroview = () => {
 
+  const onSuccess = () => {
+    console.log('on success')
+  }
+
+  const onError = () => {
+    console.log('on error')
+  }
+
   //cache time default is 5 minutes
   // state time default is 0
   // refetchInterval default is false
@@ -18,7 +26,10 @@ const RqSuperHeroview = () => {
     // refetchOnWindowFocus: false
     // refetchInterval: 2000,
     // refetchIntervalInBackground: true
-    enabled: false
+    enabled: false,
+    onSuccess,
+    onError
+
   })
 
   if (isLoading || isFetching) {
