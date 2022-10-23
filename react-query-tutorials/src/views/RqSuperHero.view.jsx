@@ -8,8 +8,10 @@ const fetchSuperHeroes = () => {
 
 const RqSuperHeroview = () => {
 
+  //cache time is 5 minutes
   const { isLoading, data, isError, error, isFetching } = useQuery('super-heroes', fetchSuperHeroes, {
-    cacheTime: 5000
+    // cacheTime: 5000,
+    staleTime : 30000
   })
 
   if (isLoading) {
