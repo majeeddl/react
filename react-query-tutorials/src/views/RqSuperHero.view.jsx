@@ -11,16 +11,17 @@ const RqSuperHeroview = () => {
   //cache time default is 5 minutes
   // state time default is 0
   // refetchInterval default is false
-  const { isLoading, data, isError, error, isFetching } = useQuery('super-heroes', fetchSuperHeroes, {
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery('super-heroes', fetchSuperHeroes, {
     // cacheTime: 5000,
     // staleTime : 30000
     // refetchOnMount: false,
     // refetchOnWindowFocus: false
-    refetchInterval: 2000,
-    refetchIntervalInBackground: true
+    // refetchInterval: 2000,
+    // refetchIntervalInBackground: true
+    enabled: false
   })
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <h2>Loading...</h2>
   }
 
@@ -32,6 +33,7 @@ const RqSuperHeroview = () => {
 
   return <>
     <h2> RQ Super Heroes</h2>
+    <button onClick={refetch}> Fetch Data</button>
     {data?.data.map((hero) => {
       return <div key={hero.name}> {hero.name}</div>
     })}
