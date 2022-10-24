@@ -4,6 +4,7 @@ import { Menu, MenuItem } from "@progress/kendo-react-layout";
 
 import "./App.scss";
 import Buttons from "./views/Buttons";
+import DropdownBasic from "./views/dropdowns/DropdownBasic";
 
 function App() {
   const navigate = useNavigate();
@@ -14,7 +15,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <Menu hoverOpenDelay={0} hoverCloseDelay={200} onSelect={selectMenu}>
         <MenuItem text="Basic">
           <MenuItem
@@ -23,8 +23,13 @@ function App() {
               route: "/buttons",
             }}
           ></MenuItem>
-          <MenuItem text="Item1.2">
-            <MenuItem text="Item1.2.1" />
+          <MenuItem text="Dropdowns">
+            <MenuItem
+              text="basic"
+              data={{
+                route: "/dropdowns/basic",
+              }}
+            />
             <MenuItem text="Item1.2.2" />
           </MenuItem>
         </MenuItem>
@@ -35,9 +40,13 @@ function App() {
         <MenuItem text="Item3" />
       </Menu>
 
-      <div>
+      <div className="p-9">
         <Routes>
           <Route path="/buttons" element={<Buttons></Buttons>}></Route>
+          <Route
+            path="/dropdowns/basic"
+            element={<DropdownBasic></DropdownBasic>}
+          ></Route>
         </Routes>
       </div>
     </div>
