@@ -10,10 +10,10 @@ import HomeView from "./views/home.view";
 import SuperHeroview from "./views/superHero.view";
 import RqSuperHeroesView from "./views/RqSuperHeroes.view";
 import RqSuperHeroView from "./views/RqSuperHero.view";
-import { RqParallelQueryView } from "./views/RqParallelQuery.view";
+import RqParallelQueryView from "./views/RqParallelQuery.view";
+import DynamicParallelView from "./views/DynamicParallel.view";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   const queryClient = new QueryClient();
 
@@ -35,6 +35,9 @@ function App() {
                 </Nav.Link>
                 <Nav.Link to="/rq-parallel-query" as={Link}>
                   rq-parallel-query
+                </Nav.Link>
+                <Nav.Link to="/rq-dynamic-parallel" as={Link}>
+                  rq-dynamic-parallel
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -59,6 +62,13 @@ function App() {
             <Route
               path="/rq-parallel-query"
               element={<RqParallelQueryView></RqParallelQueryView>}
+            ></Route>
+
+            <Route
+              path="/rq-dynamic-parallel"
+              element={
+                <DynamicParallelView heroIds={[1, 3]}></DynamicParallelView>
+              }
             ></Route>
           </Routes>
         </Container>
