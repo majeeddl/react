@@ -10,10 +10,20 @@
       "name": "Superman",
       "alterEgo": "Clark kent"
     },
-     {
+    {
       "id": 3,
       "name": "spiderman",
       "alterEgo": "Tom Halland"
+    }
+  ],
+  "friend": [
+    {
+      "id": 1,
+      "name": "majeed"
+    },
+    {
+      "id": 2,
+      "name": "masooma"
     }
   ]
 }

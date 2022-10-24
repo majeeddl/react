@@ -10,6 +10,7 @@ import HomeView from "./views/home.view";
 import SuperHeroview from "./views/superHero.view";
 import RqSuperHeroesView from "./views/RqSuperHeroes.view";
 import RqSuperHeroView from "./views/RqSuperHero.view";
+import { RqParallelQueryView } from "./views/RqParallelQuery.view";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,6 +33,9 @@ function App() {
                 <Nav.Link to="/rq-super-heroes" as={Link}>
                   rq-super-heroes
                 </Nav.Link>
+                <Nav.Link to="/rq-parallel-query" as={Link}>
+                  rq-parallel-query
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -50,6 +54,11 @@ function App() {
             <Route
               path="/rq-super-heroes"
               element={<RqSuperHeroesView></RqSuperHeroesView>}
+            ></Route>
+
+            <Route
+              path="/rq-parallel-query"
+              element={<RqParallelQueryView></RqParallelQueryView>}
             ></Route>
           </Routes>
         </Container>
