@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import { Routes,Route, useNavigate } from "react-router-dom";
+import { Menu, MenuItem } from "@progress/kendo-react-layout";
+
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
+
+  const selectMenu = (event: any) => {
+    navigate(event.item.data.route);
+  };
 
   return (
     <div className="App">
+      <Menu hoverOpenDelay={0} hoverCloseDelay={200} onSelect={selectMenu}>
+        <MenuItem text="Basic">
+          <MenuItem
+            text="Buttons"
+            data={{
+              route: "/buttons",
+            }}
+          ></MenuItem>
+          <MenuItem text="Item1.2">
+            <MenuItem text="Item1.2.1" />
+            <MenuItem text="Item1.2.2" />
+          </MenuItem>
+        </MenuItem>
+        <MenuItem text="Item2">
+          <MenuItem text="Item2.1" />
+          <MenuItem text="Item2.2" />
+        </MenuItem>
+        <MenuItem text="Item3" />
+      </Menu>
+
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Routes>
+          
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
