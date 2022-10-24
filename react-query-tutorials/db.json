@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Superman",
       "alterEgo": "Clark kent"
+    },
+     {
+      "id": 3,
+      "name": "spiderman",
+      "alterEgo": "Tom Halland"
     }
   ]
 }

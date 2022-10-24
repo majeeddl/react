@@ -1,11 +1,12 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { useSuperHeroData } from "../hooks/useSuperHeroData";
 
+const RqSuperHeroView = () => {
+  const { heroId } = useParams();
 
+  console.log(heroId);
 
-
-
-const RqSuperHeroview = () => {
   const onSuccess = () => {
     console.log("on success");
   };
@@ -14,27 +15,21 @@ const RqSuperHeroview = () => {
     console.log("on error");
   };
 
- 
-  const { isLoading, data, isError, error, isFetching, refetch } = useSuperHeroData(onSuccess,onError)
-  if (isLoading || isFetching) {
-    return <h2>Loading...</h2>;
-  }
+  const { isLoading, data, isError, error, isFetching, refetch } =
+    useSuperHeroData(heroId, onSuccess, onError);
 
-  console.log({ isLoading, isFetching });
+  if (isLoading) {
+    return <div> Loading ...</div>;
+  }
 
   if (isError) {
-    return <h2>{error.message}</h2>;
+    return <div>{error.message}</div>;
   }
-
   return (
-    <>
-      <h2> RQ Super Heroes</h2>
-      <button onClick={refetch}> Fetch Data</button>
-      {data?.map((hero) => {
-        return <div key={hero}> {hero}</div>;
-      })}
-    </>
+    <div>
+      {data?.data.name} - {data?.data.alterEgo}
+    </div>
   );
 };
 
-export default RqSuperHeroview;
+export default RqSuperHeroView;
