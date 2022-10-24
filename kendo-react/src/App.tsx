@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Routes,Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Menu, MenuItem } from "@progress/kendo-react-layout";
 
 import "./App.scss";
+import Buttons from "./views/Buttons";
 
 function App() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <Menu hoverOpenDelay={0} hoverCloseDelay={200} onSelect={selectMenu}>
         <MenuItem text="Basic">
           <MenuItem
@@ -35,7 +37,7 @@ function App() {
 
       <div>
         <Routes>
-          
+          <Route path="/buttons" element={<Buttons></Buttons>}></Route>
         </Routes>
       </div>
     </div>
