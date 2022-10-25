@@ -7,6 +7,8 @@ import Validation from "./views/Validation";
 import Integrating from "./views/Integrating";
 import ErrorHandling from "./views/ErrorHandling";
 
+import Integration from "./views/Integration";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -23,17 +25,20 @@ function App() {
                 <Nav.Link to="/validation" as={Link}>
                   Validation
                 </Nav.Link>
+                <Nav.Link to="/integrating" as={Link}>
+                  Integrating
+                </Nav.Link>
                 <Nav.Link to="/handling-error" as={Link}>
                   Handling Error
                 </Nav.Link>
                 <NavDropdown title="Integration" id="basic-nav-dropdown">
-                  <NavDropdown.Item as={Link} to="/integration-boostrap">
+                  <NavDropdown.Item as={Link} to="/integration/bootstrap">
                     Integration With Boostrap
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/integration-antd">
+                  <NavDropdown.Item as={Link} to="/integration/antd">
                     Integration With Antd
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/integration-mantine">
+                  <NavDropdown.Item as={Link} to="/integration/mantine">
                     Integration With Mantine
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -56,8 +61,14 @@ function App() {
               path="/handling-error"
               element={<ErrorHandling></ErrorHandling>}
             ></Route>
-            {/* <Route path="/super-heroes" element={<SuperHeroview></SuperHeroview>} ></Route>
-            <Route path="/rq-super-heroes" element={<RqSuperHeroview></RqSuperHeroview>} ></Route> */}
+            <Route
+              path="/handling-error"
+              element={<ErrorHandling></ErrorHandling>}
+            ></Route>
+            <Route
+              path="/integration/*"
+              element={<Integration></Integration>}
+            ></Route>
           </Routes>
         </Container>
       </div>
