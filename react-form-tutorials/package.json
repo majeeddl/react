@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.6.2",
+    "@mantine/form": "^5.6.2",
+    "@mantine/hooks": "^5.6.2",
     "antd": "^4.23.5",
     "bootstrap": "^5.2.2",
     "react": "^18.2.0",
