@@ -12,6 +12,7 @@ import RqSuperHeroesView from "./views/RqSuperHeroes.view";
 import RqSuperHeroView from "./views/RqSuperHero.view";
 import RqParallelQueryView from "./views/RqParallelQuery.view";
 import DynamicParallelView from "./views/DynamicParallel.view";
+import DependentQueriesView from "./views/DependentQueries.view";
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
                 </Nav.Link>
                 <Nav.Link to="/rq-dynamic-parallel" as={Link}>
                   rq-dynamic-parallel
+                </Nav.Link>
+                <Nav.Link to="/rq-dependent-queries" as={Link}>
+                  rq-dependent-queries
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -68,6 +72,12 @@ function App() {
               path="/rq-dynamic-parallel"
               element={
                 <DynamicParallelView heroIds={[1, 3]}></DynamicParallelView>
+              }
+            ></Route>
+            <Route
+              path="/rq-dependent-queries"
+              element={
+                <DependentQueriesView email="majeed.dl@gmail.com"></DependentQueriesView>
               }
             ></Route>
           </Routes>
