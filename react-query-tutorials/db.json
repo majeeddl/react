@@ -25,5 +25,17 @@
       "id": 2,
       "name": "masooma"
     }
+  ],
+  "users": [
+    {
+      "id": "majeed.dl@gmail.com",
+      "channelId": "codevolution"
+    }
+  ],
+  "channels": [
+    {
+      "id": "codevolution",
+      "courses": ["react", "vue", "angular"]
+    }
   ]
 }
