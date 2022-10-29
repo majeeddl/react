@@ -24,3 +24,6 @@ mantine-react/yarn.lock
 kendo-react/yarn.lock
 /kendo-react/yarn.lock
 redux-project-js/yarn.lock
+base-project-ts/yarn.lock
+cypress-project-js/yarn.lock
+storybook-project-js/yarn.lock
