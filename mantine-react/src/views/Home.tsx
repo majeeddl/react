@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, Space } from "@mantine/core";
+import { Button, Checkbox, Group, SimpleGrid, Space } from "@mantine/core";
 import { IconDatabase } from "@tabler/icons";
 
 const Home = () => {
@@ -17,6 +17,24 @@ const Home = () => {
 
       <div className="flex mt-3">
         <Checkbox label="I agree to sell my privacy" />
+      </div>
+      <div className="flex mt-3">
+        <div>Group :</div>
+        <Group>
+          <Button variant="outline">1</Button>
+          <Button variant="outline">2</Button>
+          <Button variant="outline">3</Button>
+        </Group>
+      </div>
+      <div className="flex mt-3">
+        <div>Simple Grid :</div>
+        <SimpleGrid cols={3}>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </SimpleGrid>
       </div>
     </>
   );
