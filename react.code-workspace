@@ -9,7 +9,6 @@
     {
       "path": "./redux-project-js"
     },
-   
     {
       "path": "react-query-tutorials"
     },
@@ -19,18 +18,14 @@
     {
       "path": "react-form-tutorials"
     },
-     {
+    {
       "path": "mantine-react"
     },
-     {
+    {
       "path": "kendo-react"
     },
     {
       "path": "syncfusion-react"
-    },
-    
-    {
-      "path": "./cypress-project-js"
     },
     {
       "path": "./storybook-project-js"
