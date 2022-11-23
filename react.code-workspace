@@ -10,6 +10,9 @@
       "path": "./redux-project-js"
     },
     {
+      "path": "zustand-react"
+    },
+    {
       "path": "react-query-tutorials"
     },
     {
