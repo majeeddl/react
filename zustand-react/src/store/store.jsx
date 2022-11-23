@@ -1,8 +1,20 @@
 import create, { createStore } from "zustand";
 
+
+const voting = "https://api.github.com/search/users?q=john&per_page=5";
+
 export const useStore = create((set) => ({
-  votes: 1,
-  addVotes : ()=> set(state => ({ votes : state.votes + 1}))
+  votes: voting,
+  Votes : {},
+  addVotes: () => set((state) => ({ votes: state.votes + 1 })),
+  fetch : async (voting)=> {
+    const response = await fetch(voting)
+    const json = await response.json()
+
+    set ({
+        Votes : json.items
+    })
+  }
 }));
 
 export const { getState, setState, subscribe,  } = useStore;
