@@ -9,7 +9,7 @@ This project has been written for learning and testing react
 ### Typescript
 
 ### Cypress
-
+Cypress is front end testing tool built for the modern web. This project has been developed for learning and testing using of this tool.
 
 ### StoryBook
 
