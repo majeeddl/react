@@ -24,6 +24,32 @@ export const useStore = create(
         Votes: json.items,
       });
     },
+    data: {
+      style: "light",
+      visible: true,
+    },
+
+    style: "light",
+    setStyle: () =>
+      set((state) => ({
+        data: {
+          ...state.data,
+          style: state.data.style == "light" ? "dark" : "light",
+        },
+      })),
+
+    visible: true,
+    // setVisible: () =>
+    //   set((state) => ({
+    //     visible: !state.visible
+    //   })),
+    setVisible: () =>
+      set((state) => ({
+        data: {
+          ...state.data,
+          visible: !state.data.visible,
+        },
+      })),
   }))
 );
 
