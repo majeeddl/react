@@ -8,6 +8,7 @@ import Integrating from "./views/Integrating";
 import ErrorHandling from "./views/ErrorHandling";
 
 import Integration from "./views/Integration";
+import SetError from "./views/SetError";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,9 @@ function App() {
                 </Nav.Link>
                 <Nav.Link to="/handling-error" as={Link}>
                   Handling Error
+                </Nav.Link>
+                <Nav.Link to="/set-error" as={Link}>
+                  Set Error
                 </Nav.Link>
                 <NavDropdown title="Integration" id="basic-nav-dropdown">
                   <NavDropdown.Item as={Link} to="/integration/bootstrap">
@@ -62,8 +66,8 @@ function App() {
               element={<ErrorHandling></ErrorHandling>}
             ></Route>
             <Route
-              path="/handling-error"
-              element={<ErrorHandling></ErrorHandling>}
+              path="/set-error"
+              element={<SetError></SetError>}
             ></Route>
             <Route
               path="/integration/*"
