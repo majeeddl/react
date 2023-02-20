@@ -8,66 +8,67 @@ import {
   useSyncExternalStore,
 } from "react";
 
+const createFastContext = (initialStore: Store) => {
 
-const createFastContext = <Store>(Store)=>{}
+  const useStoreData: {
+    get: () => Store;
+    set: (value: Partial<Store>) => void;
+    subscribe: (callback: () => void) => () => void;
+  } = () => {
+    const store = useRef(initialStore);
 
-type Store = { first: String; last: String };
+    const get = useCallback(() => store.current, []);
 
-const useStoreData: {
-  get: () => Store;
-  set: (value: Partial<Store>) => void;
-  subscribe: (callback: () => void) => () => void;
-} = () => {
-  const store = useRef({
-    first: "",
-    last: "",
-  });
+    const subscribers = useRef(new Set<() => void>());
 
-  const get = useCallback(() => store.current, []);
+    const set = useCallback((value: Partial<Store>) => {
+      store.current = { ...store.current, ...value };
+      subscribers.current.forEach((callback) => callback());
+    }, []);
 
-  const subscribers = useRef(new Set<() => void>());
-  // const subscribers = useRef(new Set());
+    const subscribe = useCallback((callback: () => void) => {
+      subscribers.current.add(callback);
+      return () => subscribers.current.delete(callback);
+    }, []);
 
-  const set = useCallback((value: Partial<Store>) => {
-    store.current = { ...store.current, ...value };
-    subscribers.current.forEach((callback) => callback());
-  }, []);
+    return {
+      get,
+      set,
+      subscribe,
+    };
+  };
 
-  const subscribe = useCallback((callback: () => void) => {
-    subscribers.current.add(callback);
-    return () => subscribers.current.delete(callback);
-  }, []);
+  type UseStoreDataReturnType = ReturnType<typeof useStoreData>;
+
+  const StoreContext = createContext<UseStoreDataReturnType | null>(null);
+
+  const Provider = ({ children }: { children: ReactNode }) => {
+    return (
+      <StoreContext.Provider value={useStoreData()}>
+        {children}
+      </StoreContext.Provider>
+    );
+  };
+
+  const useStore: SelectorOut = (
+    selector: (store: Store) => SelectorInput
+  ): [SelectorOutput, (value: Partial<Store>) => void] => {
+    const store = useContext(StoreContext)!;
+    if (!store) {
+      throw new Error("Store not found");
+    }
+
+    const state = useSyncExternalStore(store.subscribe, () =>
+      selector(store.get())
+    );
+
+    return [state, store.set];
+  };
 
   return {
-    get,
-    set,
-    subscribe,
+    Provider,
+    useStore,
   };
 };
 
-type UseStoreDataReturnType = ReturnType<typeof useStoreData>;
-
-const StoreContext = createContext<UseStoreDataReturnType | null>(null);
-
-const Provider = ({ children }: { children: ReactNode }) => {
-  return (
-    <StoreContext.Provider value={useStoreData()}>
-      {children}
-    </StoreContext.Provider>
-  );
-};
-
-const useStore: SelectorOut = (
-  selector: (store: Store) => SelectorInput
-): [SelectorOutput, (value: Partial<Store>) => void] => {
-  const store = useContext(StoreContext)!;
-  if (!store) {
-    throw new Error("Store not found");
-  }
-
-  const state = useSyncExternalStore(store.subscribe, () =>
-    selector(store.get())
-  );
-
-  return [state, store.set];
-};
+export default createFastContext;
