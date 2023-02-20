@@ -1,5 +1,3 @@
-import "./App.css";
-
 import {
   createContext,
   memo,
@@ -9,6 +7,7 @@ import {
   useState,
   useSyncExternalStore,
 } from "react";
+import "./App.css";
 
 // const useStoreData = () => {
 //   const store = useState({
