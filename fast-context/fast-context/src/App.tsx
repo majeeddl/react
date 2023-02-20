@@ -5,6 +5,7 @@ import {
   useContext,
   useRef,
   useState,
+  useSyncExternalStore,
 } from "react";
 import "./App.css";
 
@@ -19,11 +20,11 @@ import "./App.css";
 
 type Store = { first: String; last: String };
 
-const useStoreData = (): {
+const useStoreData: {
   get: () => Store;
   set: (value: Partial<Store>) => void;
   subscribe: (callback: () => void) => () => void;
-} => {
+} = () => {
   const store = useRef({
     first: "",
     last: "",
@@ -32,6 +33,7 @@ const useStoreData = (): {
   const get = useCallback(() => store.current, []);
 
   const subscribers = useRef(new Set<() => void>());
+  // const subscribers = useRef(new Set());
 
   const set = useCallback((value: Partial<Store>) => {
     store.current = { ...store.current, ...value };
@@ -40,7 +42,7 @@ const useStoreData = (): {
 
   const subscribe = useCallback((callback: () => void) => {
     subscribers.current.add(callback);
-    return () => subscribe.current.delete(callback);
+    return () => subscribers.current.delete(callback);
   }, []);
 
   return {
@@ -62,29 +64,39 @@ const Provider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+const useStore: SelectorOut = (
+  selector: (store: Store) => SelectorInput
+): [SelectorOutput, (value: Partial<Store>) => void] => {
+  const store = useContext(StoreContext)!;
+  if (!store) {
+    throw new Error("Store not found");
+  }
 
-const useStore = (selector : (store : Store)=> SelectorOutput) : [ SelectorOutput, (value : Partial<Store>) => void] => {
+  const state = useSyncExternalStore(store.subscribe, () =>
+    selector(store.get())
+  );
 
-}
+  return [state, store.set];
+};
 
 const TextInput = ({ value }: { value: "first" | "last" }) => {
-  const [store, setStore] = useContext(StoreContext)!;
+  const [fieldValue, setStore] = useStore((store) => store[value]);
   return (
     <div className="field">
       {value}:{" "}
       <input
-        value={store[value]}
-        onChange={(e) => setStore({ ...store, [value]: e.target.value })}
+        value={fieldValue}
+        onChange={(e) => setStore({ [value]: e.target.value })}
       />
     </div>
   );
 };
 
 const Display = ({ value }: { value: "first" | "last" }) => {
-  const [store] = useContext(StoreContext)!;
+  const [fieldValue] = useStore((store) => store[value]);
   return (
     <div className="value">
-      {value}: {store[value]}
+      {value}: {fieldValue}
     </div>
   );
 };
@@ -120,18 +132,13 @@ const ContentContainer = memo(() => {
 });
 
 function App() {
-  const store = useState({
-    first: "",
-    last: "",
-  });
-
   return (
-    <StoreContext.Provider value={store}>
+    <Provider>
       <div className="container">
         <h5>App</h5>
         <ContentContainer />
       </div>
-    </StoreContext.Provider>
+    </Provider>
   );
 }
 
