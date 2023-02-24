@@ -30,3 +30,4 @@ zustand-react/yarn.lock
 fast-context/yarn.lock
 fast-context/simple-context/yarn.lock
 vite-ssr-project/yarn.lock
+vite-ssr-project/yarn-error.log
