@@ -1,5 +1,6 @@
 import { useDroppable } from "@dnd-kit/core";
 import React from "react";
+import { CSS } from "@dnd-kit/utilities";
 
 const Droppable = (props: any) => {
   const { isOver, setNodeRef } = useDroppable({
