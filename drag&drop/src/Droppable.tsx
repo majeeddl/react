@@ -4,7 +4,7 @@ import { CSS } from "@dnd-kit/utilities";
 
 const Droppable = (props: any) => {
   const { isOver, setNodeRef } = useDroppable({
-    id: "droppable",
+    id: props.id,
   });
 
   const style = {
@@ -16,7 +16,7 @@ const Droppable = (props: any) => {
 
   return (
     <div ref={setNodeRef} style={style}>
-        {isOver ? 'over' : 'not over'}
+        {/* {isOver ? 'over' : 'not over'} */}
       {props.children}
     </div>
   );
