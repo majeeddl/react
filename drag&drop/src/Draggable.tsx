@@ -4,12 +4,12 @@ import { CSS } from "@dnd-kit/utilities";
 
 const Draggable = (props: any) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: "draggable",
+    id: props.id,
   });
 
   const style = transform
     ? {
-        transform: CSS.Translate.toString(transform),
+        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
       }
     : undefined;
 
