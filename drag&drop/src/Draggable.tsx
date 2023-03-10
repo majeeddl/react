@@ -1,5 +1,6 @@
 import { useDraggable } from "@dnd-kit/core";
 import React from "react";
+import { CSS } from "@dnd-kit/utilities";
 
 const Draggable = (props: any) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -8,7 +9,7 @@ const Draggable = (props: any) => {
 
   const style = transform
     ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+        transform: CSS.Translate.toString(transform),
       }
     : undefined;
 
