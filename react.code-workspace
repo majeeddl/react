@@ -14,6 +14,8 @@
     },
     {
       "path": "zustand-react"
+    },{
+      "path": "drag&drop/"
     },
     {
       "path": "react-query-tutorials"
