@@ -14,7 +14,8 @@
     },
     {
       "path": "zustand-react"
-    },{
+    },
+    {
       "path": "drag&drop/"
     },
     {
@@ -34,6 +35,9 @@
     },
     {
       "path": "syncfusion-react"
+    },
+    {
+      "path": "react-testing"
     },
     {
       "path": "cypress-project-js"
