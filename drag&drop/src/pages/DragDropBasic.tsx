@@ -8,14 +8,18 @@ const DragDropBasic = () => {
   const [isDropped, setIsDropped] = useState(false);
   const [parent, setParent] = useState(null);
 
-  const draggableMarkup = <Draggable id="draggable"> Drag Me</Draggable>;
+  const draggableMarkup = () => (
+    <>
+      <Draggable id="draggable"> Drag Me</Draggable>
+    </>
+  );
 
   return (
     <div>
       Drag&DropBasic
       <div className="!border border-slate-800">
         <DndContext onDragEnd={handleDragEnd}>
-          {parent === null ? draggableMarkup : null}
+          {parent === null ? draggableMarkup() : null}
 
           {containers.map((id) => (
             <Droppable key={id} id={id}>
@@ -26,7 +30,6 @@ const DragDropBasic = () => {
       </div>
     </div>
   );
-
 
   function handleDragEnd(event: any) {
     //  if (event.over && event.over.id === "droppable") {

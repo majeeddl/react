@@ -14,9 +14,19 @@ const Draggable = (props: any) => {
     : undefined;
 
   return (
-    <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
-      {props.children}
-    </button>
+    // <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
+    //   {props.children}
+    // </button>
+    <div ref={setNodeRef}>
+      <button {...listeners} {...attributes}>
+        Drag handle 1
+      </button>
+      <br />
+      /* Some other content that does not activate dragging */
+      <button {...listeners} {...attributes}>
+        Drag handle 2
+      </button>
+    </div>
   );
 };
 
