@@ -49,6 +49,9 @@
       "path": "./vite-ssr-project"
     },
     {
+      "path": "./next-app-ts"
+    },
+    {
       "path": "./server"
     },
     {
