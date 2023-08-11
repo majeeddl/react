@@ -31,6 +31,9 @@
       "path": "mantine-react"
     },
     {
+      "path": "mantine-react-table"
+    },
+    {
       "path": "kendo-react"
     },
     {
