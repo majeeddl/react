@@ -1,11 +1,35 @@
 import React from "react";
-import { Button, Checkbox, Group, SimpleGrid, Space,Text } from "@mantine/core";
-import { IconDatabase } from "@tabler/icons";
+import {
+  ActionIcon,
+  Button,
+  Checkbox,
+  CopyButton,
+  Group,
+  SimpleGrid,
+  Space,
+  Text,
+  Tooltip,
+} from "@mantine/core";
+import { IconCheck, IconCopy, IconDatabase } from "@tabler/icons-react";
 
 const Home = () => {
   return (
     <>
       <div className="font-bold">Home</div>
+
+      <CopyButton value={"test"}>
+        {({ copied, copy }) => (
+          <Tooltip
+            label={copied ? "Copied" : "Copy"}
+            withArrow
+            position="right"
+          >
+            <ActionIcon color={copied ? "teal" : "gray"} onClick={copy}>
+              {copied ? <IconCheck size="1rem" /> : <IconCopy size="1rem" />}
+            </ActionIcon>
+          </Tooltip>
+        )}
+      </CopyButton>
 
       <div className="flex mt-3">
         <Button>Settings</Button>
@@ -37,7 +61,8 @@ const Home = () => {
         </SimpleGrid>
       </div>
       <div className=" mt-3">
-        <div>Space :</div><br />
+        <div>Space :</div>
+        <br />
         <div style={{ display: "flex" }}>
           <Text>First line</Text>
           <Space w="md" />

@@ -11,8 +11,9 @@ import {
   Burger,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconChevronDown } from "@tabler/icons";
+
 import { MantineLogo } from "@mantine/ds";
+import { IconChevronDown } from "@tabler/icons-react";
 
 const HEADER_HEIGHT = 60;
 
@@ -81,7 +82,7 @@ const HeaderAction: FunctionComponent<HeaderActionProps> = ({ links }) => {
 
     if (menuItems) {
       return (
-        <Menu key={link.label} trigger="hover" exitTransitionDuration={0}>
+        <Menu key={link.label} trigger="hover" >
           <Menu.Target>
             <a
               href={link.link}
