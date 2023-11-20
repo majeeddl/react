@@ -34,6 +34,9 @@
       "path": "mantine-react-table"
     },
     {
+      "path": "react-flow"
+    },
+    {
       "path": "kendo-react"
     },
     {
