@@ -34,3 +34,5 @@ vite-ssr-project/yarn-error.log
 drag&drop/yarn.lock
 react-testing/yarn.lock
 react.code-workspace
+
+pnpm-lock.yaml
