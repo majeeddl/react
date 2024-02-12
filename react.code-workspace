@@ -52,6 +52,9 @@
       "path": "./storybook-project-js"
     },
     {
+      "path": "./storybook-project-ts"
+    },
+    {
       "path": "./vite-ssr-project"
     },
     {
